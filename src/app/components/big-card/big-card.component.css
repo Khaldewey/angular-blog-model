@@ -1,13 +1,13 @@
 .container{
   margin-left: 20px;
   margin-right: 10px;
-  border: solid white 3px;
+  /*border: solid white 3px;*/
   width: 400px;
   height: 500px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  overflow: auto;
+  /*overflow: auto;*/
 }
 
 .big-card__title > h1 {
@@ -15,7 +15,12 @@
   font-size: 20px;
 }
 
-.big-card__descroption > p {
+.big-card__description > p {
   margin-top: 10px;
-  color: gray;
+  color: grey;
+}
+
+.big-card__photo > img {
+  width: 100%;
+  min-width: 400px;
 }
