@@ -14,18 +14,20 @@ photoCover:string = ""
 contentTitle:string = ""
 @Input()
 contentDescription:string = "" 
-private id:string | null = "0"
+private id:string | any = "0"
 constructor(
   private route:ActivatedRoute
 ){}
 ngOnInit(): void{
   this.route.paramMap.subscribe(value => 
-    this.id = value.get("id"))
+    this.id = value.get("id")) 
+
+    this.setValuesToComponent(parseInt(this.id))
 } 
 
-setValuesToComponent(id:string | null){
- const result = dataFake.filter(
-  article => article.id.toString() == id )[0] 
+setValuesToComponent(id:string | any){ 
+ const result = dataFake.filter(article => article.id.toString() == id )[id - 1]  
+ 
   
   this.contentTitle = result.title 
   this.contentDescription = result.description
